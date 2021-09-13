@@ -16,7 +16,7 @@ html {
 body {
     color: var(--main-font-color);
     background-color: var(--main-bg-color);
-    background-image: url(/images/background.png);
+    background-image: url(images/background.png);
     background-attachment: fixed;
     background-size: 15%;
     font-family: var(--main-font-family);
