@@ -26,7 +26,6 @@ main {
     width: 100%;
     display: grid;
     grid-template-rows: 100vh auto;
-    grid-template-columns: auto auto;
     align-items: center;
     justify-content: center;
     grid-gap: 100px;
