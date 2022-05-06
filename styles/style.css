@@ -26,6 +26,7 @@ main {
     width: 100%;
     display: grid;
     grid-template-rows: 100vh auto;
+    grid-template-columns: auto auto;
     align-items: center;
     justify-content: center;
     grid-gap: 100px;
@@ -38,7 +39,7 @@ a {
 
 #navbar {
     position: relative;
-    float: center;
+    float: left;
     display: flex;
     width: 38%;
     height: 5%;
@@ -106,16 +107,16 @@ hr {
     font-size: large;
 }
 
-@media screen and (max-width: 600px) {
-    #navbar {
+@media screen and (max-width: 850px) {
+    /* #navbar {
         display: none;
-    }
+    } */
 
-    #name {
+    /* #name {
         flex-direction: column;
-    }
+    } */
 
-    #name > h2 {
+    /* #name > h2 {
         font-size: 25pt;
-    }
+    } */
 }
