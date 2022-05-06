@@ -37,19 +37,16 @@ a {
 }
 
 #navbar {
-    position: absolute;
-    right: 0;
-    display: grid;
-    grid-template-columns: 50px 50px;
-    width: 100%;
+    position: relative;
+    float: center;
+    display: flex;
+    width: 38%;
     height: 5%;
-    gap: 5px;
-    margin-top: 10px;
-}
-
-#navbar a {
-    justify-self: center;
-    
+    gap: 15px;
+    margin-top: 20px;
+    margin-left: 20px;
+    align-content: space-between;
+    font-size: large;
 }
 
 .card {
