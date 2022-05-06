@@ -1,0 +1,18 @@
+baseURL = 'http://example.org/'
+languageCode = 'en-us'
+title = "Aaradh's Blog"
+theme = "tale"
+
+[params]
+  Author = "Aaradh Nepal" # Add the name of the author (this theme only supports one author)
+[author]
+  name = "Aaradh Nepal" # Used by the foot copyright
+
+[menu]
+  [[menu.main]]
+    identifier = "about"
+    name = "About"
+    title = "About"
+    url = "https://ardnep.github.io/personal-website"
+    weight = 0
+
