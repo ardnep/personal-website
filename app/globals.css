@@ -1,0 +1,23 @@
+@tailwind base;
+@tailwind components;
+@tailwind utilities;
+
+:root {
+  --foreground-rgb: 246, 240, 226;
+  --background-rgb: 30, 30, 30;
+
+  --content-padding: 5rem;
+
+  --navbar-height: 4.5rem;
+}
+
+html {
+  scroll-behavior: smooth;
+}
+
+body {
+  color: rgb(var(--foreground-rgb));
+  background: rgb(var(--background-rgb));
+  padding-right: var(--content-padding);
+  padding-left: var(--content-padding);
+}

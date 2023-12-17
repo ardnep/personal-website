@@ -1,0 +1,51 @@
+.heroContainer {
+    display: flex;
+    flex-direction: column;
+    justify-content: space-between;
+
+    height: 100vh;
+
+    padding-top: var(--navbar-height);
+    padding-bottom: 4rem;
+}
+
+.heroTitleContainer {
+    position: relative;
+}
+
+.heroTitle {
+    font-size: 8.5rem;
+    padding-left: var(--content-padding);
+    padding-top: 2%;
+    line-height: 10rem;
+}
+
+.ellipse {
+    position: absolute;
+    left: 15%;
+    top: 0;
+}
+
+.heroContentContainer {
+    display: flex;
+    justify-content: space-between;
+    align-items: flex-end;
+    gap: 30%;
+}
+
+.contactIconsContainer {
+    display: flex;
+    flex-direction: row;
+    gap: 2rem;
+}
+
+.contactIcon {
+    width: 2rem;
+}
+
+.bio {
+    font-size: 1.5rem;
+    text-align: right;
+    max-height: 30rem;
+    max-width: 30rem;
+}

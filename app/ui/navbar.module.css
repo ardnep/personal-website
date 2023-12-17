@@ -1,0 +1,37 @@
+.navContainer {
+    position: fixed;
+    z-index: 1030;
+    right: 0;
+    top: 0;
+    width: 100%;
+    height: var(--navbar-height);
+}
+
+.navList {
+    display: flex;
+    flex-direction: row;
+    justify-content: end;
+    padding-top: 1.8rem;
+    padding-right: var(--content-padding);
+    gap: 2rem;
+}
+
+@media only screen and (max-width: 600px) {
+    .navList {
+        display: none !important;
+    }
+}
+
+.navItem {
+    font-size: 1.5rem;
+
+    text-decoration: underline;
+    text-decoration-thickness: 0.2rem;
+    text-decoration-color: transparent;
+
+    transition: 0.5s;
+}
+
+.navItem:hover {
+    text-decoration-color: var(--background-rgb);
+}
