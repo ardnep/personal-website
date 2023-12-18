@@ -1,7 +1,5 @@
 import classNames from 'classnames';
 import styles from '../ui/rulinglist.module.css'
-import { ArrowUpRight, Plus } from 'react-feather'
-
 
 const Line = ({ className }: { className?: string }) => {
     return (
@@ -9,32 +7,31 @@ const Line = ({ className }: { className?: string }) => {
     );
 }
 
-const ExpandableListItem = (
+const RuledListItem = (
     {
         id,
         title,
-        expandedContent
+        icon
     }: {
         id: number,
         title: string,
-        expandedContent: string
+        icon?: React.ReactNode
     }
 ) => {
     return (
         <>
             <li key={id} className={styles.listItem}>
-                <div className={styles.listItemLeftContent}>
-                    <Plus size='3rem' strokeWidth={0.8} />{title}
-                </div>
-                <div className={styles.listItemRightContent}>
-                    <ArrowUpRight size='3rem' strokeWidth={0.8} />
+                <div className={styles.itemHeadingContainer}>
+                    <div className={styles.listItemLeftContent}>
+                        {icon}{title}
+                    </div>
                 </div>
             </li>
         </>
     );
 }
 
-const ExpandableRulingList = (
+const RuledList = (
     {
         width,
         children
@@ -58,4 +55,4 @@ const ExpandableRulingList = (
     );
 }
 
-export { ExpandableRulingList, ExpandableListItem };
+export { RuledList, RuledListItem };

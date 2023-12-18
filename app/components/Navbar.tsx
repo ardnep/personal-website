@@ -1,4 +1,3 @@
-import Link from 'next/link';
 import styles from '../ui/navbar.module.css'
 
 interface Section {
@@ -26,7 +25,7 @@ const Navbar: React.FC = () => {
 
 const NavItem = ({ path, name }: { path: string, name: string }) => {
     return (
-        <Link className={styles.navItem} href={path}>{name}</Link>
+        <a className={styles.navItem} href={path}>{name}</a>
     );
 }
 

@@ -3,25 +3,27 @@
     border-color: var(--foreground-rgb);
 }
 
+.listItem {
+    opacity: 1;
+    transition: 0.3s ease-in-out;
+    cursor: pointer;
+    padding: 1.2rem;
+}
+
 .listContainer:hover>.listItem {
-    opacity: 0.4;
+    opacity: 0.5;
 }
 
 .listContainer:hover>.listItem:hover {
     opacity: 1;
+    transform: scale(1.01);
 }
 
-.listItem {
+.itemHeadingContainer {
     display: flex;
     align-items: center;
     justify-content: space-between;
-    padding: 1.2rem;
     font-size: 1.5rem;
-
-    cursor: pointer;
-
-    opacity: 1;
-    transition: 0.3s ease-in-out;
 }
 
 .listItemLeftContent {
@@ -35,4 +37,10 @@
     display: flex;
     align-items: center;
     justify-content: center;
+}
+
+.listItemExpandedContent {
+    font-size: 1rem;
+    margin-left: 5%;
+    opacity: 0.7;
 }
