@@ -1,0 +1,38 @@
+.line {
+    border-width: 0.5px;
+    border-color: var(--foreground-rgb);
+}
+
+.listContainer:hover>.listItem {
+    opacity: 0.4;
+}
+
+.listContainer:hover>.listItem:hover {
+    opacity: 1;
+}
+
+.listItem {
+    display: flex;
+    align-items: center;
+    justify-content: space-between;
+    padding: 1.2rem;
+    font-size: 1.5rem;
+
+    cursor: pointer;
+
+    opacity: 1;
+    transition: 0.3s ease-in-out;
+}
+
+.listItemLeftContent {
+    display: flex;
+    align-items: center;
+    justify-content: flex-start;
+    gap: 15px;
+}
+
+.listItemRightContent {
+    display: flex;
+    align-items: center;
+    justify-content: center;
+}
