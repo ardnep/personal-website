@@ -1,0 +1,14 @@
+.skillsMainContainer {
+    display: flex;
+    flex-direction: row;
+    justify-content: center;
+    align-items: center;
+    gap: 2rem;
+    align-self: center;
+    width: 80%;
+}
+
+.skillsContainer {
+    display: flex;
+    width: 100%;
+}

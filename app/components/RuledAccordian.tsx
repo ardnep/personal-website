@@ -16,11 +16,15 @@ const RuledAccordian = (
     {
         id,
         title,
+        link,
+        tools,
         children
     }: {
         id: number,
         title: string,
-        children: string
+        link?: string,
+        tools?: string[],
+        children?: string
     }
 ) => {
     const [isOpen, setOpen] = useState(false);
@@ -33,10 +37,20 @@ const RuledAccordian = (
                             isOpen ? <Minus size='3rem' strokeWidth={0.8} /> :
                                 <Plus size='3rem' strokeWidth={0.8} />
                         }
-                        {title}
+                        <h2>{title}</h2>
+                        <ul className={styles.toolsList}>
+                            {tools?.map((tool, index) => (
+                                <>
+                                    <li key={index}>{tool}</li>
+                                    {index !== tools.length - 1 && <span>&bull;</span>}
+                                </>
+                            ))}
+                        </ul>
                     </div>
                     <div className={styles.listItemRightContent}>
-                        <ArrowUpRight size='3rem' strokeWidth={0.8} />
+                        {
+                            link && <a href={link} target='_blank'><ArrowUpRight size='3rem' strokeWidth={0.8} /></a>
+                        }
                     </div>
                 </div>
                 {

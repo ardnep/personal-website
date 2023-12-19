@@ -18,6 +18,13 @@ html {
 body {
   color: rgb(var(--foreground-rgb));
   background: rgb(var(--background-rgb));
+}
+
+main {
   padding-right: var(--content-padding);
   padding-left: var(--content-padding);
+}
+
+h2 {
+  font-size: 1.5rem;
 }

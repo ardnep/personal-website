@@ -23,7 +23,8 @@ const RuledListItem = (
             <li key={id} className={styles.listItem}>
                 <div className={styles.itemHeadingContainer}>
                     <div className={styles.listItemLeftContent}>
-                        {icon}{title}
+                        {icon}
+                        <h2>{title}</h2>
                     </div>
                 </div>
             </li>
@@ -41,7 +42,7 @@ const RuledList = (
     }
 ) => {
     return (
-        <div>
+        <div className={styles.mainWrapper}>
             <Line />
             <ul className={styles.listContainer}>
                 {children.map((item, index) => (

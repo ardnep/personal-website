@@ -1,0 +1,50 @@
+.listContainer {
+    display: flex;
+    flex-direction: column;
+    gap: 2rem;
+}
+
+.listContainer:hover>.listItem {
+    opacity: 0.6;
+}
+
+.listContainer:hover>.listItem:hover {
+    opacity: 1;
+}
+
+.listItem {
+    display: flex;
+    flex-direction: row;
+    align-items: flex-start;
+    justify-content: flex-start;
+    gap: 2rem;
+    transition: 0.3s ease-in-out;
+}
+
+.infoContainer {
+    display: flex;
+    flex-direction: column;
+    max-width: 60%;
+}
+
+.titleContainer {
+    display: flex;
+    flex-direction: row;
+    justify-content: flex-start;
+    align-items: center;
+    gap: 0.5rem;
+}
+
+.company {
+    opacity: 0.7;
+    font-style: italic;
+}
+
+.experienceDescription {
+    opacity: 0.7;
+}
+
+.dateContainer {
+    opacity: 0.7;
+    margin-top: 0.2rem;
+}
