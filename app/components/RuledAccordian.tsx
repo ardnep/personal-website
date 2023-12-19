@@ -31,23 +31,25 @@ const RuledAccordian = (
     return (
         <>
             <li key={id} className={styles.listItem} onClick={() => setOpen(!isOpen)}>
-                <div className={styles.itemHeadingContainer}>
-                    <div className={styles.listItemLeftContent}>
+                <div className={styles.listItemHeadingContainer}>
+                    <div className={styles.listItemHeadingContent}>
                         {
-                            isOpen ? <Minus size='3rem' strokeWidth={0.8} /> :
-                                <Plus size='3rem' strokeWidth={0.8} />
+                            isOpen ? <span><Minus size='3rem' strokeWidth={0.8} /></span> :
+                                <span><Plus size='3rem' strokeWidth={0.8} /></span>
                         }
-                        <h2>{title}</h2>
-                        <ul className={styles.toolsList}>
-                            {tools?.map((tool, index) => (
-                                <>
-                                    <li key={index}>{tool}</li>
-                                    {index !== tools.length - 1 && <span>&bull;</span>}
-                                </>
-                            ))}
-                        </ul>
+                        <div className={styles.titleToolsContainer}>
+                            <h2>{title}</h2>
+                            <ul className={styles.toolsList}>
+                                {tools?.map((tool, index) => (
+                                    <>
+                                        <li key={index}>{tool}</li>
+                                        {index !== tools.length - 1 && <span>&bull;</span>}
+                                    </>
+                                ))}
+                            </ul>
+                        </div>
                     </div>
-                    <div className={styles.listItemRightContent}>
+                    <div className={styles.listItemHeadingContent}>
                         {
                             link && <a href={link} target='_blank'><ArrowUpRight size='3rem' strokeWidth={0.8} /></a>
                         }

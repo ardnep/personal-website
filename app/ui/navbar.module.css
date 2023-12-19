@@ -16,10 +16,31 @@
     gap: 2rem;
 }
 
-@media only screen and (max-width: 600px) {
-    .navList {
-        display: none !important;
-    }
+.navBurgerContainer {
+    display: none !important;
+    position: relative;
+    flex-direction: column;
+    align-items: flex-end;
+    justify-content: center;
+    padding-top: 5%;
+    padding-right: var(--content-padding);
+}
+
+.navBurger {
+    cursor: pointer;
+}
+
+.navBurgerList {
+    background-color: rgb(var(--foreground-rgb));
+    color: rgb(var(--background-rgb));
+    display: flex;
+    flex-direction: column;
+    position: absolute;
+    right: 5%;
+    top: 100%;
+    padding: 1rem;
+    width: 90%;
+    gap: 1rem;
 }
 
 .navItem {
@@ -34,4 +55,14 @@
 
 .navItem:hover {
     text-decoration-color: var(--background-rgb);
+}
+
+@media only screen and (max-width: 600px) {
+    .navList {
+        display: none !important;
+    }
+
+    .navBurgerContainer {
+        display: flex !important;
+    }
 }

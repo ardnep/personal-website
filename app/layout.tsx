@@ -1,8 +1,9 @@
 import type { Metadata } from 'next'
-import { Quicksand } from 'next/font/google'
+import { Inter } from 'next/font/google'
+import classNames from 'classnames';
 import './globals.css'
 
-const font = Quicksand({ subsets: ['latin'], weight: '300' })
+const font = Inter({ subsets: ['latin'], weight: '300' })
 
 export const metadata: Metadata = {
   title: 'Aaradh Nepal',
@@ -17,7 +18,7 @@ export default function RootLayout({
 }) {
   return (
     <html lang="en">
-      <body className={font.className}>
+      <body className={classNames(font.className, 'antialiased')}>
         {children}
       </body>
     </html>

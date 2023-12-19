@@ -21,10 +21,12 @@ const RuledListItem = (
     return (
         <>
             <li key={id} className={styles.listItem}>
-                <div className={styles.itemHeadingContainer}>
-                    <div className={styles.listItemLeftContent}>
-                        {icon}
-                        <h2>{title}</h2>
+                <div className={styles.listItemHeadingContainer}>
+                    <div className={styles.listItemHeadingContent}>
+                        <span className={styles.leftIcon}>{icon}</span>
+                        <div className='break-all'>
+                            <h2>{title}</h2>
+                        </div>
                     </div>
                 </div>
             </li>
