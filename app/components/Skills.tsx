@@ -2,9 +2,7 @@ import React from 'react'
 import Section from './Section'
 import { RuledList, RuledListItem } from './RuledList'
 
-import { PythonPlain, JavaPlain, JavascriptPlain, TypescriptPlain, CPlain, MysqlPlain, FlaskOriginal, ReactOriginal, PythonOriginal, JavaOriginal, TypescriptOriginal, COriginal, MysqlOriginal, FlutterOriginal, NextjsOriginal, GitOriginal, Css3Original } from 'devicons-react'
-import { FontAwesomeIcon } from '@fortawesome/react-fontawesome'
-import { faPython, faJs, faReact, faLinux, faJava } from '@fortawesome/free-brands-svg-icons'
+import { FlaskOriginal, ReactOriginal, PythonOriginal, JavaOriginal, TypescriptOriginal, COriginal, FlutterOriginal, NextjsOriginal, GitOriginal, Css3Original } from 'devicons-react'
 import styles from '../ui/skills.module.css'
 
 const Skills = () => {
