@@ -16,7 +16,7 @@ const Experience = () => {
                         </ExperienceItem>
                         <ExperienceItem id={2} startDate='Sep 2022' endDate='Nov 2022' title='Computer Science Peer Tutor' company='Nanyang Technological University, Singapore'>
                             Conducted tutorial sessions for SC1003: Introduction to Computational Thinking and Programming teaching students Python and C programming
-                            by designing effective presentations on the course content and preparing practice questions of different levels to assess student's
+                            by designing effective presentations on the course content and preparing practice questions of different levels to assess student&apos;s
                             understanding.
                         </ExperienceItem>
                         <ExperienceItem id={3} startDate='Aug 2023' endDate='Jun 2023' title='Undergraduate Linguistics Researcher' company='Nanyang Technological University, Singapore'>
