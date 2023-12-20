@@ -6,7 +6,7 @@ const Projects = () => {
     return (
         <Section id='projects' title='Projects'>
             <RuledAccordianList>
-                <RuledAccordian id={4} title='(Ongoing) Smart To-do Scheduler' tools={['Flask']}>Desciption coming soon...</RuledAccordian>
+                <RuledAccordian id={4} title='Smart To-do Scheduler' tools={['Flask']}>Desciption coming soon...</RuledAccordian>
                 <RuledAccordian id={3} title='This Website' link='https://github.com/ardnep/personal-website' tools={['Next.js', 'React', 'TypeScript']}>Desciption coming soon...</RuledAccordian>
                 <RuledAccordian id={7} title='Depression Detection using Speech' tools={['PyTorch', 'librosa']}>Desciption coming soon...</RuledAccordian>
                 <RuledAccordian id={1} title='Bluetooth Robot Controller' link='https://github.com/SC2079-Group19/AndroidApp' tools={['Android Studio', 'Java']}>Desciption coming soon...</RuledAccordian>
