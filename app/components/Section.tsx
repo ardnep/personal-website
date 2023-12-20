@@ -6,11 +6,11 @@ const font = DM_Serif_Display({ subsets: ['latin'], weight: '400' })
 
 const Section = (
     { id, title, children }:
-        { id: string, title: string, children: React.ReactNode }
+        { id: string, title?: string, children: React.ReactNode }
 ) => {
     return (
         <section id={id} className={styles.sectionContainer}>
-            <h1 className={classNames(styles.sectionTitle, font.className)}>{title}</h1>
+            {title && <h1 className={classNames(styles.sectionTitle, font.className)}>{title}</h1>}
             {children}
         </section >
     );

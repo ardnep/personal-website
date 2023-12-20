@@ -14,24 +14,15 @@ const Hero: React.FC = () => {
     return (
         <section id="home" className={styles.heroContainer}>
             <div className={styles.heroTitleContainer}>
-                <h1 className={classnames(styles.heroTitle, font.className)}>Aaradh<br />Nepal</h1>
-                <Image src='/ellipse.svg' alt='ellipse' className={styles.ellipse} width='500' height='500' />
+                <h1 className={classnames(styles.heroTitle, font.className)}>Aaradh Nepal</h1>
+                <Image src='/blob.svg' alt='ellipse' className={styles.ellipse} width='500' height='500' />
             </div>
             <div className={styles.heroContentContainer}>
                 <div className={styles.contactIconsContainer}>
-                    <FontAwesomeIcon className={styles.contactIcon} icon={faGithub} />
-                    <FontAwesomeIcon className={styles.contactIcon} icon={faLinkedin} />
-                    <FontAwesomeIcon className={styles.contactIcon} icon={faEnvelope} />
+                    <a href='https://github.com/ardnep' target='_blank'><FontAwesomeIcon className={styles.contactIcon} icon={faGithub} /></a>
+                    <a href='https://www.linkedin.com/in/aaradh-nepal/' target='_blank'><FontAwesomeIcon className={styles.contactIcon} icon={faLinkedin} /></a>
+                    <a href='mailto:aaradhnep@gmail.com'><FontAwesomeIcon className={styles.contactIcon} icon={faEnvelope} /></a>
                 </div>
-                <p className={styles.bio}>
-                    Lorem ipsum dolor sit amet, consectetur adipiscing elit,
-                    sed do eiusmod tempor incididunt ut labore et dolore magna
-                    aliqua. deserunt mollit anim id est laborum.
-                    Lorem ipsum dolor sit amet, consectetur adipiscing elit,
-                    jkhkjhkjhjh
-                    Lorem ipsum dolor sit amet, consectetur adipiscing elit,
-                    Lorem ipsum dolor sit amet, consectetur adipiscing elit,
-                </p>
             </div>
         </section>
     );

@@ -6,11 +6,11 @@ import styles from '../ui/experience.module.css'
 
 const Experience = () => {
     return (
-        <Section id='about' title='Experience'>
+        <Section id='experience' title='Experience'>
             <div className={styles.sectionWrapper}>
                 <div className={styles.experienceListContainer}>
                     <ExperienceList>
-                        <ExperienceItem id={1} startDate='Jan 2024' endDate='Present' title='Full Stack Software Engineer Intern' company='Hypotenuse AI (YC S20), Singapore'>
+                        <ExperienceItem id={1} startDate='Jan 2024' endDate='Jun 2024' title='Full Stack Software Engineer Intern' company='Hypotenuse AI (YC S20), Singapore'>
                             Will be working accross the stack (frontend, backend and DevOps) to write and maintain high quality efficient software at a Y Combinator-backed startup that is
                             building an AI Content Generator.
                         </ExperienceItem>
@@ -24,7 +24,7 @@ const Experience = () => {
                             to deceipher Linear A and compare, visually and gramatologically, different writing systems and languages from the Mediterranean.
                         </ExperienceItem>
                     </ExperienceList>
-                    <a href='#' className={styles.resumeLink}>
+                    <a href='/files/404_resume.pdf' target='_blank' className={styles.resumeLink}>
                         View Full Résumé
                         <ArrowUpRight size='1.5rem' strokeWidth={0.8} />
                     </a>
