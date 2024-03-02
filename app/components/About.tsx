@@ -24,8 +24,8 @@ const About = () => {
           <p>
             I genuinely enjoy learning, particularly when it involves topics
             that lie at the intersection of multiple disciplines. In my free
-            time, you'll often find me tinkering with side projects and building
-            fully automated workflows.
+            time, you&apos;ll often find me tinkering with side projects and
+            building fully automated workflows.
           </p>
         </div>
       </div>
