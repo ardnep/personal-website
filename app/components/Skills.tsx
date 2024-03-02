@@ -1,37 +1,60 @@
-import React from 'react'
-import Section from './Section'
-import { RuledList, RuledListItem } from './RuledList'
+import React from "react";
+import Section from "./Section";
 
-import { FlaskOriginal, ReactOriginal, PythonOriginal, JavaOriginal, TypescriptOriginal, COriginal, FlutterOriginal, NextjsOriginal, GitOriginal, Css3Original } from 'devicons-react'
-import styles from '../ui/skills.module.css'
+import { FaGitAlt, FaJava, FaPython, FaReact } from "react-icons/fa";
+import {
+  SiFastapi,
+  SiFlask,
+  SiTypescript,
+  SiNextdotjs,
+  SiC,
+} from "react-icons/si";
+
+import classes from "../ui/skills.module.css";
 
 const Skills = () => {
-    const iconColor = '#ebebeb';
-    const iconSize = 40;
-    return (
-        <Section id='skills' title='Technologies'>
-            <div className={styles.skillsMainContainer}>
-                <div className={styles.skillsContainer}>
-                    <RuledList>
-                        <RuledListItem id={1} title='Python' icon={<PythonOriginal size={iconSize} />}></RuledListItem>
-                        <RuledListItem id={5} title='Java' icon={<JavaOriginal size={iconSize} />}></RuledListItem>
-                        <RuledListItem id={4} title='TypeScript' icon={<TypescriptOriginal size={iconSize} />}></RuledListItem>
-                        <RuledListItem id={2} title='CSS' icon={<Css3Original size={iconSize} />}></RuledListItem>
-                        <RuledListItem id={3} title='C' icon={<COriginal size={iconSize} />}></RuledListItem>
-                    </RuledList>
-                </div>
-                <div className={styles.skillsContainer}>
-                    <RuledList>
-                        <RuledListItem id={1} title='Flask' icon={<FlaskOriginal size={iconSize} />}></RuledListItem>
-                        <RuledListItem id={2} title='React' icon={<ReactOriginal size={iconSize} />}></RuledListItem>
-                        <RuledListItem id={3} title='Flutter' icon={<FlutterOriginal size={iconSize} />}></RuledListItem>
-                        <RuledListItem id={4} title='Nextjs' icon={<NextjsOriginal size={iconSize} />}></RuledListItem>
-                        <RuledListItem id={5} title='Git' icon={<GitOriginal size={iconSize} />}></RuledListItem>
-                    </RuledList>
-                </div>
-            </div>
-        </Section>
-    )
-}
+  return (
+    <Section id="skills" title="Technologies">
+      <div className="grid grid-cols-3 gap-px bg-[radial-gradient(circle_at_center,rgba(255,255,255,0.9)_0,rgba(255,255,255,0.1)_100%)]">
+        <div className={classes.techCard}>
+          <FaPython className={classes.icon} size="3em"></FaPython>
+          <p>Python</p>
+        </div>
+        <div className={classes.techCard}>
+          <SiFlask className={classes.icon} size="3em"></SiFlask>
+          <p>Flask</p>
+        </div>
+        <div className={classes.techCard}>
+          <SiTypescript className={classes.icon} size="3rem"></SiTypescript>
+          <p>TypeScript</p>
+        </div>
+        <div className={classes.techCard}>
+          <FaReact className={classes.icon} size="3rem"></FaReact>
+          <p>React.js</p>
+        </div>
+        <div className={classes.techCard}>
+          <SiNextdotjs className={classes.icon} size="3rem"></SiNextdotjs>
+          <p>Next.js</p>
+        </div>
+        <div className={classes.techCard}>
+          <FaGitAlt className={classes.icon} size="3rem"></FaGitAlt>
+          <p>Git</p>
+        </div>
+        <div className={classes.techCard}>
+          <FaJava className={classes.icon} size="3rem"></FaJava>
+          <p>Java</p>
+        </div>
+        <div className={classes.techCard}>
+          <SiFastapi className={classes.icon} size="3rem"></SiFastapi>
+          <p>Fastapi</p>
+        </div>
+        <div className={classes.techCard}>
+          <SiC className={classes.icon} size="3rem"></SiC>
+          <p>C</p>
+        </div>
+      </div>
+    </Section>
+  );
+};
 
-export default Skills
+export default Skills;

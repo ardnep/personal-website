@@ -1,15 +1,13 @@
 .sectionContainer {
-    display: flex;
-    flex-direction: column;
-    justify-content: flex-start;
+  display: flex;
+  flex-direction: column;
+  justify-content: flex-start;
 
-    min-height: 100vh;
-
-    padding-top: var(--navbar-height);
-    padding-bottom: 4rem;
+  padding-top: calc(var(--navbar-height) + 5%);
+  padding-bottom: calc(var(--navbar-height) + 5%);
 }
 
 .sectionTitle {
-    font-size: 4rem;
-    margin-bottom: 5%;
+  margin-bottom: 5%;
 }
+
