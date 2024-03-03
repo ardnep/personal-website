@@ -14,19 +14,18 @@ const Section = ({
   children: React.ReactNode;
 }) => {
   return (
-    <section id={id} className={styles.sectionContainer}>
+    <section
+      id={id}
+      className="flex flex-col content-start pt-[calc(var(--navbar-height)+5%)] pb-[calc(var(--navbar-height)+5%)]"
+    >
       {title && (
-        <h1 className={classNames(styles.sectionTitle, font.className)}>
+        <h2 className={classNames("md:text-5xl text-4xl mb-8", font.className)}>
           {title}
-        </h1>
+        </h2>
       )}
       {children}
     </section>
   );
-};
-
-const HeroSection = () => {
-  return <></>;
 };
 
 export default Section;

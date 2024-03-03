@@ -1,52 +1,34 @@
 import Image from "next/image";
 
-import styles from "../ui/hero.module.css";
 import { IBM_Plex_Mono } from "next/font/google";
 import { FiGithub, FiMail } from "react-icons/fi";
 import { RiLinkedinFill } from "react-icons/ri";
+import classnames from "classnames";
 
 const font = IBM_Plex_Mono({ subsets: ["latin"], weight: "300" });
 
 const Hero: React.FC = () => {
   return (
-    <section className={styles.heroSection}>
-      <div
-        style={{
-          paddingTop: "5%",
-          display: "flex",
-          alignItems: "flex-start",
-          flexDirection: "column",
-          gap: "3rem",
-          height: "100%",
-        }}
-      >
-        <Image src="/barcode.svg" alt="barcode" width={200} height={100} />
-        <div
-          style={{
-            display: "flex",
-            flexDirection: "column",
-            gap: "0.5rem",
-          }}
-        >
-          <h1 className={font.className}>Aaradh Nepal</h1>
-          <h2
-            style={{
-              fontWeight: 600,
-              color: "rgb(var(--secondary-rgb))",
-            }}
-          >
-            Software Engineer | Student
-          </h2>
+    <section className="h-[100vh] pt-[calc(var(--navbar-height)+5%)]">
+      <div className="pt-12 flex flex-col items-start gap-12 h-full">
+        {/* <Image src="/barcode.svg" alt="barcode" width={200} height={100} /> */}
+        <div className="flex flex-col gap-2">
+          <h1 className={classnames("md:text-7xl text-6xl", font.className)}>
+            Aaradh Nepal
+          </h1>
+          <p className="font-semibold text-[color:rgb(var(--secondary-rgb))] md:text-2xl text-xl mb-0">
+            Software Engineer &#11825; Student
+          </p>
         </div>
-        <div className={styles.contactIconsContainer}>
+        <div className="flex flex-row item-center content-center md:gap-8 gap-4 [&>*]:md:text-3xl [&>*]:text-2xl">
           <a href="https://github.com/ardnep" target="_blank">
-            <FiGithub className={styles.contactIcon} />
+            <FiGithub />
           </a>
           <a href="https://www.linkedin.com/in/aaradh-nepal/" target="_blank">
-            <RiLinkedinFill className={styles.contactIcon} />
+            <RiLinkedinFill />
           </a>
           <a href="mailto:aaradhnep@gmail.com">
-            <FiMail className={styles.contactIcon} />
+            <FiMail />
           </a>
         </div>
       </div>

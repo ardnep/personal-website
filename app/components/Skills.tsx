@@ -15,7 +15,7 @@ import classes from "../ui/skills.module.css";
 const Skills = () => {
   return (
     <Section id="skills" title="Technologies">
-      <div className="grid grid-cols-3 gap-px bg-[radial-gradient(circle_at_center,rgba(255,255,255,0.9)_0,rgba(255,255,255,0.1)_100%)]">
+      <div className="grid grid-cols-3 gap-px bg-[radial-gradient(circle_at_center,rgba(255,255,255,0.5)_0,rgba(255,255,255,0)_100%)]">
         <div className={classes.techCard}>
           <FaPython className={classes.icon} size="3em"></FaPython>
           <p>Python</p>
