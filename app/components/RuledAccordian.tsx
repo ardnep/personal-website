@@ -1,12 +1,18 @@
 "use client";
 
-import classNames from "classnames";
 import styles from "../ui/rulinglist.module.css";
 import { ArrowUpRight, Minus, Plus } from "react-feather";
-import React, { useState } from "react";
+import React, { useCallback, useRef, useState } from "react";
+import { Chip } from "./Chip";
+import classnames from "classnames";
+
+import Image from "next/image";
+import { useMousePosition } from "../hooks/useMousePosition";
+import gsap from "gsap";
+import { useGSAP } from "@gsap/react";
 
 const Line = ({ className }: { className?: string }) => {
-  return <hr className={classNames(styles.line, className)}></hr>;
+  return <hr className={classnames(styles.line, className)}></hr>;
 };
 
 const RuledAccordian = ({
@@ -14,18 +20,68 @@ const RuledAccordian = ({
   title,
   link,
   tools,
+  imgSrc,
   children,
 }: {
   id: number;
   title: string;
   link?: string;
   tools?: string[];
+  imgSrc?: string;
   children?: string;
 }) => {
   const [isOpen, setOpen] = useState(false);
+  const [isHovered, setIsHovered] = useState(false);
+  const position = useMousePosition();
+
+  const projectImage = useRef(null);
+
+  //
+  // GSAP Animation
+  //
+  gsap.registerPlugin(useGSAP);
+  // show image on hover
+  useGSAP(() => {
+    gsap.to(projectImage.current, { autoAlpha: isHovered ? 1 : 0 });
+    gsap.to(projectImage.current, {
+      left: position.x,
+      top: position.y,
+      delay: 0.01,
+    });
+  }, [isHovered, position]);
+
+  useGSAP(() => {}, [isOpen]);
+
   return (
     <>
-      <li key={id} className={styles.listItem} onClick={() => setOpen(!isOpen)}>
+      {imgSrc && isHovered && !isOpen && (
+        <Image
+          src={imgSrc}
+          alt={title}
+          ref={projectImage}
+          width={300}
+          height={100}
+          style={{
+            position: "fixed",
+            left: position.x,
+            top: position.y,
+            objectFit: "cover",
+            transform: "translateX(-50%) translateY(-50%)",
+            zIndex: 9,
+            opacity: 0,
+            visibility: "hidden",
+            pointerEvents: "none",
+            borderRadius: "5px",
+          }}
+        />
+      )}
+      <li
+        key={id}
+        onMouseEnter={() => setIsHovered(true)}
+        onMouseLeave={() => setIsHovered(false)}
+        className={classnames(styles.listItem)}
+        onClick={() => setOpen(!isOpen)}
+      >
         <div className={styles.listItemHeadingContainer}>
           <div className={styles.listItemHeadingContent}>
             {isOpen ? (
@@ -39,12 +95,11 @@ const RuledAccordian = ({
             )}
             <div className={styles.titleToolsContainer}>
               <h3>{title}</h3>
-              <ul className={styles.toolsList}>
+              <ul className="flex flex-row flex-wrap gap-1">
                 {tools?.map((tool, index) => (
-                  <>
-                    <li key={index}>{tool}</li>
-                    {index !== tools.length - 1 && <span>&bull;</span>}
-                  </>
+                  <li key={index}>
+                    <Chip label={tool} />
+                  </li>
                 ))}
               </ul>
             </div>
@@ -84,4 +139,3 @@ const RuledAccordianList = ({ children }: { children: React.ReactNode[] }) => {
 };
 
 export { Line, RuledAccordian, RuledAccordianList };
-

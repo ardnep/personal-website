@@ -1,8 +1,6 @@
 import React from "react";
 import Section from "./Section";
 import { ExperienceList, ExperienceItem } from "./ExperienceList";
-import { ArrowUpRight } from "react-feather";
-import styles from "../ui/experience.module.css";
 
 const Experience = () => {
   return (
@@ -40,7 +38,7 @@ const Experience = () => {
         />
         <ExperienceItem
           id={3}
-          startDate="Aug 2023"
+          startDate="Aug 2022"
           endDate="Jun 2023"
           title="Undergraduate Linguistics Researcher"
           company="Nanyang Technological University, Singapore"
@@ -51,18 +49,26 @@ const Experience = () => {
               Mediterranean."
           skills={["Python", "Computational Linguistics", "Academic Research"]}
         />
+        <ExperienceItem
+          id={4}
+          startDate="Jun 2020"
+          endDate="Aug 2020"
+          title="Research Intern"
+          company="Tilganga Institute of Ophthalmology, Nepal"
+          description="Developed a Python program using the PsychoPy library to conduct perceptual learning tasks for a psychophysics research project dealing with Cortical Visual Impairment (CVI)."
+          skills={["Python", "PsychoPy"]}
+        />
       </ExperienceList>
-      <a
+      {/* <a
         href="/files/404_resume.pdf"
         target="_blank"
         className={styles.resumeLink}
       >
         View Full Résumé
         <ArrowUpRight size="1.5rem" strokeWidth={0.8} />
-      </a>
+      </a> */}
     </Section>
   );
 };
 
 export default Experience;
-

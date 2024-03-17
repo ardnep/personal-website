@@ -17,7 +17,7 @@ const Hero: React.FC = () => {
             Aaradh Nepal
           </h1>
           <p className="font-semibold text-[color:rgb(var(--secondary-rgb))] md:text-2xl text-xl mb-0">
-            Software Engineer &#11825; Student
+            Software Engineer <span>&bull;</span> Student
           </p>
         </div>
         <div className="flex flex-row item-center content-center md:gap-8 gap-4 [&>*]:md:text-3xl [&>*]:text-2xl">

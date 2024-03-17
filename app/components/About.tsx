@@ -16,7 +16,7 @@ const About = () => {
           className="rounded"
         />
         <div className="[&>*]:lg:text-2xl [&>*]:text-xl">
-          <p>
+          <p className="mb-5">
             I&apos;m an aspiring Software Engineer, currently pursuing a degree
             in Computer Science. I am passionate about building software that is
             efficient, scalable, and user-friendly.

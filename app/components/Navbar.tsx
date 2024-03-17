@@ -18,7 +18,7 @@ const sections: Section[] = [
   { name: "experience", path: "#experience" },
   { name: "skills", path: "#skills" },
   { name: "projects", path: "#projects" },
-  { name: "blog", path: "#blog" },
+  { name: "posts", path: "#posts" },
 ];
 
 const font = IBM_Plex_Mono({ subsets: ["latin"], weight: "400" });

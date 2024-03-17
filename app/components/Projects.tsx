@@ -19,6 +19,7 @@ const PROJECTS = [
     id: 3,
     title: "This Website",
     link: "",
+    tools: ["Next.js", "Tailwind CSS"],
   },
   {
     id: 4,
@@ -57,6 +58,7 @@ const Projects = () => {
             title={project.title}
             link={project.link}
             tools={project.tools}
+            imgSrc="/macbook-pro.jpg"
           >
             Description coming soon...
           </RuledAccordian>
@@ -67,4 +69,3 @@ const Projects = () => {
 };
 
 export default Projects;
-

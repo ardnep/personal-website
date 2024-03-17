@@ -19,16 +19,13 @@ const ExperienceItem = ({
   description?: string;
 }) => {
   return (
-    <li
-      className="grid md:grid-cols-[150px_1fr] grid-cols-1 items-start content-start"
-      key={id}
-    >
+    <li className="grid md:grid-cols-[150px_1fr] grid-cols-1" key={id}>
       <p className="opacity-70 mb-0">
         {startDate} - {endDate}
       </p>
       <div className="flex flex-col gap-1">
-        <div className="flex lg:flex-row flex-col lg:content-start lg:items-center gap-1">
-          <h3 className="md:text-xl text-lg">{title}</h3>
+        <div className="flex lg:flex-row flex-col flex-wrap lg:justify-start lg:items-center gap-1">
+          <h3>{title}</h3>
           <p className="italic opacity-70 mb-0">{company}</p>
         </div>
         <p className="opacity-70 mb-0">{description}</p>
