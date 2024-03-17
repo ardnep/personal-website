@@ -35,26 +35,35 @@ const RuledAccordian = ({
   const position = useMousePosition();
 
   const projectImage = useRef(null);
+  const accordionContainer = useRef(null);
 
   //
   // GSAP Animation
   //
   gsap.registerPlugin(useGSAP);
+
   // show image on hover
   useGSAP(() => {
-    gsap.to(projectImage.current, { autoAlpha: isHovered ? 1 : 0 });
+    gsap.to(projectImage.current, { autoAlpha: isHovered && !isOpen ? 1 : 0 });
     gsap.to(projectImage.current, {
       left: position.x,
       top: position.y,
       delay: 0.01,
     });
-  }, [isHovered, position]);
+  }, [isOpen, isHovered, position]);
 
-  useGSAP(() => {}, [isOpen]);
+  // open and close container
+  useGSAP(() => {
+    gsap.to(accordionContainer.current, {
+      height: isOpen ? "auto" : 0,
+      duration: 0.3,
+      ease: "power3.inOut",
+    });
+  }, [isOpen]);
 
   return (
     <>
-      {imgSrc && isHovered && !isOpen && (
+      {imgSrc && (
         <Image
           src={imgSrc}
           alt={title}
@@ -112,11 +121,15 @@ const RuledAccordian = ({
             )}
           </div>
         </div>
-        {isOpen && (
-          <div className={styles.listItemExpandedContent}>
-            <p>{children}</p>
-          </div>
-        )}
+        <div
+          style={{
+            height: 0,
+            overflow: "hidden",
+          }}
+          ref={accordionContainer}
+        >
+          {children}
+        </div>
       </li>
     </>
   );
