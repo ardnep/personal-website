@@ -1,10 +1,12 @@
+import { ArrowUpRight } from "react-feather";
 import { RuledAccordian, RuledAccordianList } from "./RuledAccordian";
 import Section from "./Section";
+import { ExternalLink } from "./ExternalLink";
 
 interface Project {
   title: string;
-  link: string;
-  tools: string[];
+  link?: string;
+  tools?: string[];
   imgSrc?: string;
   additionalInfo?: string[];
   description?: string;
@@ -13,7 +15,6 @@ interface Project {
 const PROJECTS: Project[] = [
   {
     title: "Raven: A Smart Task Scheduler",
-    link: "",
     tools: ["Flask"],
     additionalInfo: ["Ongoing"],
     description: `Raven is an app that enables you to create your daily schedule
@@ -28,7 +29,7 @@ const PROJECTS: Project[] = [
   },
   {
     title: "MyTripDiary",
-    link: "",
+    link: "https://github.com/ardnep/SC2006-Project-No-Idea",
     tools: ["React Native", "TypeScript", "Firebase", "Various APIs"],
     imgSrc: "/project-images/my-trip-diary.jpeg",
     description: `MyTripDiary is a mobile app that allows you to keep track of your daily commutes and trips.
@@ -36,7 +37,7 @@ const PROJECTS: Project[] = [
   },
   {
     title: "See-maphores",
-    link: "",
+    link: "https://github.com/ardnep/see-maphores",
     tools: ["OpenCV", "YoloV5", "Tessaract OCR"],
     imgSrc: "/project-images/see-maphores.jpeg",
     additionalInfo: ["Hackathon Finalist"],
@@ -44,7 +45,7 @@ const PROJECTS: Project[] = [
   },
   {
     title: "Bluetooth Robot Controller",
-    link: "",
+    link: "https://github.com/SC2079-Group19/AndroidApp",
     tools: ["Android Studio", "Java"],
     imgSrc: "/project-images/bluetooth-robot-controller.jpeg",
     description: `
@@ -52,21 +53,19 @@ An Android app that connects to a Bluetooth-enabled robot and allows you to cont
   },
   {
     title: "Unconventionality and Success: A Data Science Project",
-    link: "",
+    link: "https://github.com/ardnep/ntu-sc1015-mini-project",
     tools: ["Numpy", "Pandas", "Matplotlib"],
     imgSrc: "/project-images/unconv-and-success.jpeg",
     description: `A data science project that explores the relationship between career success of a developer and whether they are an 'unconventional' individual. The project uses data from the Stack Overflow Developer Survery 2020.`,
   },
   {
     title: "Depression Detection using Speech",
-    link: "",
     tools: ["PyTorch", "librosa"],
     imgSrc: "/project-images/depression-using-speech.jpeg",
     description: `A deep learning project aimed at leveraging acoustic features to detect depression in speech. We developed two combined Convolutional Neural Network (CNN) and Recurrent Neural Network (RNN) architectures and performed a comparative analysis along with model optimizations and hyperparameter tuning.`,
   },
   {
     title: "This Website",
-    link: "",
     tools: ["Next.js", "Tailwind CSS", "GSAP"],
     description: `Yes.`,
   },
@@ -86,9 +85,14 @@ const Projects = () => {
             additionalInfo={project.additionalInfo}
             imgSrc={project.imgSrc}
           >
-            <p className="opacity-70">
-              {project.description || "Description not available"}
-            </p>
+            <div>
+              <p className="opacity-70">
+                {project.description || "Description not available"}
+              </p>
+              {project.link && (
+                <ExternalLink href={project.link}>View Project</ExternalLink>
+              )}
+            </div>
           </RuledAccordian>
         ))}
       </RuledAccordianList>

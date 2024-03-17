@@ -1,18 +1,3 @@
-.resumeLink {
-  margin-top: 1rem;
-  display: flex;
-  flex-direction: row;
-  text-decoration: underline;
-  text-decoration-color: transparent;
-  align-items: flex-start;
-  transition: 0.2s;
-  font-size: 1.2rem;
-}
-
-.resumeLink:hover {
-  text-decoration-color: var(--foreground-rgb);
-}
-
 .sectionWrapper {
   display: flex;
   flex-direction: row;
@@ -34,4 +19,3 @@
     width: 100%;
   }
 }
-

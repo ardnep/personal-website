@@ -2,11 +2,10 @@
 
 import styles from "../ui/rulinglist.module.css";
 import { ArrowUpRight, Minus, Plus } from "react-feather";
-import React, { useCallback, useRef, useState } from "react";
+import React, { useRef, useState } from "react";
 import { Chip, ChipColor } from "./Chip";
 import classnames from "classnames";
 
-import Image from "next/image";
 import { useMousePosition } from "../hooks/useMousePosition";
 import gsap from "gsap";
 import { useGSAP } from "@gsap/react";
@@ -122,13 +121,6 @@ const RuledAccordian = ({
                 ))}
               </ul>
             </div>
-          </div>
-          <div className={styles.listItemHeadingContent}>
-            {link && (
-              <a href={link} target="_blank">
-                <ArrowUpRight size="3rem" strokeWidth={0.8} />
-              </a>
-            )}
           </div>
         </div>
         <div

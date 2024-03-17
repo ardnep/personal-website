@@ -59,14 +59,6 @@ const Experience = () => {
           skills={["Python", "PsychoPy"]}
         />
       </ExperienceList>
-      {/* <a
-        href="/files/404_resume.pdf"
-        target="_blank"
-        className={styles.resumeLink}
-      >
-        View Full Résumé
-        <ArrowUpRight size="1.5rem" strokeWidth={0.8} />
-      </a> */}
     </Section>
   );
 };
