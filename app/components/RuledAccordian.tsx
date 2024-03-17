@@ -3,7 +3,7 @@
 import styles from "../ui/rulinglist.module.css";
 import { ArrowUpRight, Minus, Plus } from "react-feather";
 import React, { useCallback, useRef, useState } from "react";
-import { Chip } from "./Chip";
+import { Chip, ChipColor } from "./Chip";
 import classnames from "classnames";
 
 import Image from "next/image";
@@ -20,6 +20,7 @@ const RuledAccordian = ({
   title,
   link,
   tools,
+  additionalInfo,
   imgSrc,
   children,
 }: {
@@ -27,8 +28,9 @@ const RuledAccordian = ({
   title: string;
   link?: string;
   tools?: string[];
+  additionalInfo?: string[];
   imgSrc?: string;
-  children?: string;
+  children?: React.ReactNode;
 }) => {
   const [isOpen, setOpen] = useState(false);
   const [isHovered, setIsHovered] = useState(false);
@@ -64,23 +66,23 @@ const RuledAccordian = ({
   return (
     <>
       {imgSrc && (
-        <Image
+        <img
           src={imgSrc}
-          alt={title}
+          alt="oops... image didn't load"
           ref={projectImage}
-          width={300}
-          height={100}
           style={{
             position: "fixed",
             left: position.x,
             top: position.y,
-            objectFit: "cover",
+            objectFit: "contain",
             transform: "translateX(-50%) translateY(-50%)",
-            zIndex: 9,
+            zIndex: 1040,
             opacity: 0,
             visibility: "hidden",
             pointerEvents: "none",
             borderRadius: "5px",
+            width: "450px",
+            maxHeight: "450px",
           }}
         />
       )}
@@ -88,26 +90,34 @@ const RuledAccordian = ({
         key={id}
         onMouseEnter={() => setIsHovered(true)}
         onMouseLeave={() => setIsHovered(false)}
-        className={classnames(styles.listItem)}
         onClick={() => setOpen(!isOpen)}
+        className={styles.listItem}
+        style={{
+          gap: isOpen ? "0.5rem" : "0",
+        }}
       >
         <div className={styles.listItemHeadingContainer}>
           <div className={styles.listItemHeadingContent}>
             {isOpen ? (
               <span>
-                <Minus size="3rem" strokeWidth={0.8} />
+                <Minus size="2rem" strokeWidth={0.8} />
               </span>
             ) : (
               <span>
-                <Plus size="3rem" strokeWidth={0.8} />
+                <Plus size="2rem" strokeWidth={0.8} />
               </span>
             )}
             <div className={styles.titleToolsContainer}>
-              <h3>{title}</h3>
+              <h4>{title}</h4>
               <ul className="flex flex-row flex-wrap gap-1">
+                {additionalInfo?.map((info, index) => (
+                  <li key={index}>
+                    <Chip color={ChipColor.WARNING} label={info} />
+                  </li>
+                ))}
                 {tools?.map((tool, index) => (
                   <li key={index}>
-                    <Chip label={tool} />
+                    <Chip color={ChipColor.INFO} label={tool} />
                   </li>
                 ))}
               </ul>
@@ -138,12 +148,12 @@ const RuledAccordian = ({
 const RuledAccordianList = ({ children }: { children: React.ReactNode[] }) => {
   return (
     <div>
-      <Line />
+      <Line className="opacity-50" />
       <ul className={styles.listContainer}>
         {children.map((item) => (
           <>
             {item}
-            <Line />
+            <Line className="opacity-50" />
           </>
         ))}
       </ul>

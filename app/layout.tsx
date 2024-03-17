@@ -3,7 +3,7 @@ import { Inter, Source_Sans_3 } from "next/font/google";
 import classNames from "classnames";
 import "./globals.css";
 
-const font = Source_Sans_3({ subsets: ["latin"], weight: "400" });
+const font = Inter({ subsets: ["latin"], weight: "400" });
 
 export const metadata: Metadata = {
   title: "Aaradh Nepal",
