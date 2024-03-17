@@ -1,7 +1,8 @@
-import { ArrowUpRight } from "react-feather";
 import { RuledAccordian, RuledAccordianList } from "./RuledAccordian";
 import Section from "./Section";
 import { ExternalLink } from "./ExternalLink";
+import { Card } from "./Card";
+import { BrowserView, MobileView } from "react-device-detect";
 
 interface Project {
   title: string;
@@ -74,28 +75,44 @@ An Android app that connects to a Bluetooth-enabled robot and allows you to cont
 const Projects = () => {
   return (
     <Section id="projects" title="Projects">
-      <RuledAccordianList>
-        {PROJECTS.map((project, idx) => (
-          <RuledAccordian
-            id={idx}
-            key={idx}
-            title={project.title}
-            link={project.link}
-            tools={project.tools}
-            additionalInfo={project.additionalInfo}
-            imgSrc={project.imgSrc}
-          >
-            <div>
-              <p className="opacity-70">
-                {project.description || "Description not available"}
-              </p>
-              {project.link && (
-                <ExternalLink href={project.link}>View Project</ExternalLink>
-              )}
-            </div>
-          </RuledAccordian>
-        ))}
-      </RuledAccordianList>
+      <MobileView>
+        <div className="flex flex-row flex-wrap gap-8 items-center justify-center">
+          {PROJECTS.map((project, idx) => (
+            <Card
+              key={idx}
+              title={project.title}
+              imgSrc={project.imgSrc}
+              description={project.description}
+              tools={project.tools}
+              additionalInfo={project.additionalInfo}
+              link={project.link}
+            />
+          ))}
+        </div>
+      </MobileView>
+      <BrowserView>
+        <RuledAccordianList>
+          {PROJECTS.map((project, idx) => (
+            <RuledAccordian
+              id={idx}
+              key={idx}
+              title={project.title}
+              tools={project.tools}
+              additionalInfo={project.additionalInfo}
+              imgSrc={project.imgSrc}
+            >
+              <div>
+                <p className="opacity-70">
+                  {project.description || "Description not available"}
+                </p>
+                {project.link && (
+                  <ExternalLink href={project.link}>View Project</ExternalLink>
+                )}
+              </div>
+            </RuledAccordian>
+          ))}
+        </RuledAccordianList>
+      </BrowserView>
     </Section>
   );
 };

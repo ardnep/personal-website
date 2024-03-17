@@ -1,7 +1,7 @@
 "use client";
 
 import styles from "../ui/rulinglist.module.css";
-import { ArrowUpRight, Minus, Plus } from "react-feather";
+import { Minus, Plus } from "react-feather";
 import React, { useRef, useState } from "react";
 import { Chip, ChipColor } from "./Chip";
 import classnames from "classnames";
@@ -11,13 +11,12 @@ import gsap from "gsap";
 import { useGSAP } from "@gsap/react";
 
 const Line = ({ className }: { className?: string }) => {
-  return <hr className={classnames(styles.line, className)}></hr>;
+  return <hr className={className}></hr>;
 };
 
 const RuledAccordian = ({
   id,
   title,
-  link,
   tools,
   additionalInfo,
   imgSrc,
@@ -25,7 +24,6 @@ const RuledAccordian = ({
 }: {
   id: number;
   title: string;
-  link?: string;
   tools?: string[];
   additionalInfo?: string[];
   imgSrc?: string;
@@ -140,12 +138,12 @@ const RuledAccordian = ({
 const RuledAccordianList = ({ children }: { children: React.ReactNode[] }) => {
   return (
     <div>
-      <Line className="opacity-50" />
+      <Line className="border-[color:hsla(0,0%,100%,0.2)]" />
       <ul className={styles.listContainer}>
         {children.map((item) => (
           <>
             {item}
-            <Line className="opacity-50" />
+            <Line className="border-[color:hsla(0,0%,100%,0.2)]" />
           </>
         ))}
       </ul>
