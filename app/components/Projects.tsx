@@ -1,8 +1,10 @@
+"use client";
+
 import { RuledAccordian, RuledAccordianList } from "./RuledAccordian";
 import Section from "./Section";
 import { ExternalLink } from "./ExternalLink";
 import { Card } from "./Card";
-import { BrowserView, MobileView } from "react-device-detect";
+import { useMediaQuery } from "react-responsive";
 
 interface Project {
   title: string;
@@ -73,9 +75,11 @@ An Android app that connects to a Bluetooth-enabled robot and allows you to cont
 ];
 
 const Projects = () => {
+  const isMobile = useMediaQuery({ query: "(max-width: 768px)" });
+
   return (
     <Section id="projects" title="Projects">
-      <MobileView>
+      {isMobile ? (
         <div className="flex flex-row flex-wrap gap-8 items-center justify-center">
           {PROJECTS.map((project, idx) => (
             <Card
@@ -89,8 +93,7 @@ const Projects = () => {
             />
           ))}
         </div>
-      </MobileView>
-      <BrowserView>
+      ) : (
         <RuledAccordianList>
           {PROJECTS.map((project, idx) => (
             <RuledAccordian
@@ -112,7 +115,7 @@ const Projects = () => {
             </RuledAccordian>
           ))}
         </RuledAccordianList>
-      </BrowserView>
+      )}
     </Section>
   );
 };
