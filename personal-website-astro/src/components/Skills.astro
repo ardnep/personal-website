@@ -1,0 +1,36 @@
+---
+import { Icon } from "astro-icon/components";
+import Section from "../layouts/Section.astro";
+
+interface Skill {
+  name: string;
+  icon: string;
+}
+
+const skills: Skill[] = [
+  { name: "Next.js", icon: "simple-icons:nextdotjs" },
+  { name: "Flask", icon: "simple-icons:flask" },
+  { name: "TypeScript", icon: "simple-icons:typescript" },
+  { name: "React.js", icon: "simple-icons:react" },
+  { name: "Python", icon: "simple-icons:python" },
+  { name: "Git", icon: "simple-icons:git" },
+  { name: "Java", icon: "ri:java-fill" },
+  { name: "Fastapi", icon: "simple-icons:fastapi" },
+  { name: "C", icon: "simple-icons:c" },
+];
+---
+
+<Section id="skills" title="Skills">
+  <div
+    class="grid grid-cols-3 gap-px bg-[radial-gradient(circle_at_center,rgba(255,255,255,0.5)_0,rgba(255,255,255,0)_100%)]"
+  >
+    {
+      skills.map((skill) => (
+        <div class="flex flex-col gap-2 items-center justify-center p-8 bg-black">
+          <Icon name={skill.icon} class="md:text-5xl text-3xl" />
+          <p>{skill.name}</p>
+        </div>
+      ))
+    }
+  </div>
+</Section>

@@ -1,0 +1,88 @@
+---
+import Section from "../layouts/Section.astro";
+import Chip, { ChipColor } from "../components/Chip.svelte";
+
+interface Experience {
+  startDate: string;
+  endDate: string;
+  title: string;
+  company: string;
+  description: string;
+  skills?: string[];
+}
+
+const experiences: Experience[] = [
+  {
+    startDate: "Jan 2024",
+    endDate: "Present",
+    title: "Full Stack Software Engineer",
+    company: "Hypotenuse AI (YC S20), Singapore",
+    description:
+      "Working accross the stack (frontend, backend and DevOps) to write and maintain high quality, efficient software at a Y Combinator-backed startup that is building an AI Content Generator.",
+    skills: [
+      "Python",
+      "TypeScript",
+      "React.js",
+      "MUI",
+      "Fastapi",
+      "Docker",
+      "DynamoDB",
+    ],
+  },
+  {
+    startDate: "Sep 2022",
+    endDate: "Nov 2022",
+    title: "Computer Science Peer Tutor",
+    company: "Nanyang Technological University, Singapore",
+    description:
+      "Conducted tutorial sessions for SC1003: Introduction to Computational Thinking and Programming teaching students Python and C programming by designing effective presentations on the course content and preparing practice questions of different levels to assess student's understanding.",
+    skills: ["Teaching", "Presentation Skills", "Python", "C"],
+  },
+  {
+    startDate: "Aug 2022",
+    endDate: "Jun 2023",
+    title: "Undergraduate Linguistics Researcher",
+    company: "Nanyang Technological University, Singapore",
+    description:
+      "Worked on a Linguistics research with the topic of Computationally Deciphering Ancient Writing Systems to propose a novel combined approach to deceipher Linear A and compare, visually and gramatologically, different writing systems and languages from the Mediterranean.",
+    skills: ["Python", "Computational Linguistics", "Academic Research"],
+  },
+  {
+    startDate: "Jun 2020",
+    endDate: "Aug 2020",
+    title: "Research Intern",
+    company: "Tilganga Institute of Ophthalmology, Nepal",
+    description:
+      "Developed a Python program using the PsychoPy library to conduct perceptual learning tasks for a psychophysics research project dealing with Cortical Visual Impairment (CVI).",
+    skills: ["Python", "PsychoPy"],
+  },
+];
+---
+
+<Section id="experience" title="Experience">
+  <ul class="flex flex-col gap-8">
+    {
+      experiences.map((experience) => (
+        <li class="grid md:grid-cols-[180px_1fr] grid-cols-1">
+          <p class="opacity-70 mb-0">
+            {experience.startDate} - {experience.endDate}
+          </p>
+          <div class="flex flex-col gap-2">
+            <div class="flex lg:flex-row flex-col flex-wrap lg:justify-start lg:items-center gap-1">
+              <h4>{experience.title}</h4>
+              <p class="italic opacity-70 mb-0">{experience.company}</p>
+            </div>
+            <p class="opacity-70 mb-0">{experience.description}</p>
+            {experience.skills && (
+              <div class="flex flex-row flex-wrap gap-1 [&>*]:text-sm">
+                {experience.skills.map((skill) => (
+                  <Chip label={skill} color={ChipColor.INFO} />
+                ))}
+              </div>
+            )}
+          </div>
+        </li>
+      ))
+    }
+  </ul>
+</Section>
