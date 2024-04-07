@@ -1,0 +1,27 @@
+---
+import { Icon } from "astro-icon/components";
+---
+
+<section class="h-[100vh] pt-[calc(var(--navbar-height)+5%)]">
+  <div class="pt-12 flex flex-col items-start gap-12 h-full">
+    <div class="flex flex-col gap-2">
+      <h1 class="md:text-7xl text-6xl font-mono font-light">Aaradh Nepal</h1>
+      <p class="font-semibold text-blue md:text-2xl text-xl mb-0">
+        Software Engineer <span>&bull;</span> Student
+      </p>
+    </div>
+    <div
+      class="flex flex-row item-center content-center md:gap-8 gap-4 [&>*]:md:text-3xl [&>*]:text-2xl"
+    >
+      <a href="https://github.com/ardnep" target="_blank">
+        <Icon name="lucide:github" />
+      </a>
+      <a href="https://www.linkedin.com/in/aaradh-nepal/" target="_blank">
+        <Icon name="ri:linkedin-fill" />
+      </a>
+      <a href="mailto:aaradhnep@gmail.com">
+        <Icon name="mdi:email-outline" />
+      </a>
+    </div>
+  </div>
+</section>

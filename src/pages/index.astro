@@ -1,0 +1,25 @@
+---
+import MainLayout from "../layouts/MainLayout.astro";
+
+import Home from "../components/Home.astro";
+import About from "../components/About.astro";
+import Experience from "../components/Experience.astro";
+import Projects from "../components/Projects.astro";
+import Navbar from "../components/Navbar.svelte";
+---
+
+<MainLayout title="Aaradh Nepal" description="Aspiring Software Engineer">
+  <Navbar client:load />
+  <main>
+    <Home />
+    <About />
+    <Experience />
+    <Projects />
+  </main>
+</MainLayout>
+
+<style>
+  main {
+    @apply md:pr-[15%] md:pl-[15%] pr-[7.5%] pl-[7.5%];
+  }
+</style>

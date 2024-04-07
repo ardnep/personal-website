@@ -1,0 +1,29 @@
+---
+import { Image } from "astro:assets";
+import Section from "../layouts/Section.astro";
+---
+
+<Section id="about">
+  <div class="flex flex-col lg:flex-row gap-8 items-center content-center">
+    <Image
+      src="/profile.jpeg"
+      alt="profile-picture"
+      width={300}
+      height={300}
+      class="rounded"
+    />
+    <div class="[&>*]:lg:text-2xl [&>*]:text-xl">
+      <p class="mb-5">
+        I&apos;m an aspiring Software Engineer, currently pursuing a degree in
+        Computer Science. I am passionate about building software that is
+        efficient, scalable, and user-friendly.
+      </p>
+      <p>
+        I genuinely enjoy learning, particularly when it involves topics that
+        lie at the intersection of multiple disciplines. In my free time,
+        you&apos;ll often find me tinkering with side projects and building
+        fully automated workflows.
+      </p>
+    </div>
+  </div>
+</Section>

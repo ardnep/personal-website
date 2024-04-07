@@ -1,0 +1,40 @@
+---
+import type { MarkdownInstance } from "astro";
+
+import MainLayout from "../../layouts/MainLayout.astro";
+import Section from "../../layouts/Section.astro";
+import Navbar from "../../components/Navbar.svelte";
+
+// @ts-ignore
+import { formatPosts, formatDate } from "../../utils.ts";
+
+const allPosts = await Astro.glob("./*.md");
+const formattedPosts: MarkdownInstance<Record<string, any>>[] =
+  formatPosts(allPosts);
+---
+
+<MainLayout title="Posts - Aaradh Nepal" description="Posts">
+  <Navbar client:load />
+  <main class="md:pr-[15%] md:pl-[15%] pr-[7.5%] pl-[7.5%]">
+    <Section id="posts" title="Posts">
+      <ul class="flex flex-col gap-4">
+        {
+          formattedPosts.map((post) => (
+            <li>
+              <a href={post.url}>
+                <article class="opacity-70 hover:opacity-100 hover:cursor-pointer duration-300">
+                  <span class="text-xl">{post.frontmatter.title}</span>
+                  <span class="opacity-50">
+                    {post.frontmatter.minutesRead}
+                    &bull;
+                    {formatDate(post.frontmatter.date)}
+                  </span>
+                </article>
+              </a>
+            </li>
+          ))
+        }
+      </ul>
+    </Section>
+  </main>
+</MainLayout>

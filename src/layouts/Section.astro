@@ -1,0 +1,16 @@
+---
+interface Props {
+  id: string;
+  title?: string;
+}
+
+const { id, title } = Astro.props;
+---
+
+<section
+  id={id}
+  class="flex flex-col content-start pt-[calc(var(--navbar-height)+5%)] pb-[calc(var(--navbar-height)+5%)]"
+>
+  {title && <h2 class="md:text-5xl text-4xl mb-8 font-mono">{title}</h2>}
+  <slot />
+</section>

@@ -1,0 +1,22 @@
+---
+import MainLayout from "./MainLayout.astro";
+import { Icon } from "astro-icon/components";
+
+const { frontmatter } = Astro.props;
+---
+
+<MainLayout title={frontmatter.title} description={frontmatter.description}>
+  <div class="flex items-center justify-center pt-14 pb-10">
+    <!-- extra div to prevent content being affected by flex -->
+    <div
+      class="prose prose-h1:text-center prose-headings:font-mono dark:prose-invert prose-neutral prose-a:text-white prose-p:text-justify prose-a:text-blue"
+    >
+      <a
+        class="no-underline cursor-pointer p-2 rounded-md bg-white/20 text-sm flex flex-row max-w-fit items-center justify-center gap-1 mb-4 opacity-70 hover:opacity-100 duration-300"
+        href="/posts"
+        ><Icon class="w-5 h-5" name="ph:arrow-left-thin" />Back to posts</a
+      >
+      <slot />
+    </div>
+  </div>
+</MainLayout>
