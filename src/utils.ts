@@ -1,4 +1,3 @@
-// @ts-nocheck
 import type { MarkdownInstance } from "astro";
 
 export const formatPosts = (
@@ -6,17 +5,25 @@ export const formatPosts = (
   filterOutDrafts: boolean = true,
   sortByDate: boolean = true,
 ) => {
-  const filteredPosts = posts.reduce((acc, post) => {
-    if (filterOutDrafts && post.frontmatter.draft) {
-      return acc;
-    }
+  const filteredPosts = posts.reduce(
+    (acc, post) => {
+      if (filterOutDrafts && post.frontmatter.draft) {
+        return acc;
+      }
 
-    return [...acc, post];
-  }, []);
+      return [...acc, post];
+    },
+    [] as MarkdownInstance<Record<string, any>>[],
+  );
 
   if (sortByDate) {
     return filteredPosts.sort(
-      (a, b) => new Date(b.frontmatter.date) - new Date(a.frontmatter.date),
+      (
+        a: MarkdownInstance<Record<string, any>>,
+        b: MarkdownInstance<Record<string, any>>,
+      ) =>
+        new Date(b.frontmatter.date).getTime() -
+        new Date(a.frontmatter.date).getTime(),
     );
   }
   return filteredPosts;
