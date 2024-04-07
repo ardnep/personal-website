@@ -1,16 +1,17 @@
 ---
 layout: "../../layouts/PostLayout.astro"
 
-title: Genuit fama Iovis repente
-description: Description
-date: 2024-03-30
+title: Blog
+description: This is my first blog post on this website and will be primarily used for testing purposes.
+date: 2024-04-08
 draft: false 
 ---
 
-# Genuit fama Iovis repente
+# Blog
+
+> This is my first blog post on this website and will be primarily used for testing purposes.
 
 ## Haerenti post
-
 Lorem markdownum Cimmerios glomerataque male in intellegit oculi aratro quae,
 essem, quod tenet? Iovi ad ipsa Eueninae pampineae remoto populo sed meis sine
 pleno veterem, submovet, vetat. Patria Hecabesque domito requiris putatis novum
