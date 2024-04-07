@@ -1,1 +1,1 @@
-# Built with Astro, Svelte and TailwindCSS
+# Built with Astro, Svelte, and TailwindCSS
