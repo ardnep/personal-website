@@ -34,21 +34,24 @@
           p-4
           flex 
           flex-col
-          gap-2
+          justify-between
+          flex-grow
       `}
   >
-    <h4 class="text-wrap">{title}</h4>
-    {#if tools || additionalInfo}
-      <div class="flex flex-row flex-wrap gap-1">
-        {#each additionalInfo || [] as info}
-          <Chip label={info} color={ChipColor.WARNING} />
-        {/each}
-        {#each tools || [] as tool}
-          <Chip label={tool} color={ChipColor.INFO} />
-        {/each}
-      </div>
-    {/if}
-    <p class="opacity-70">{description}</p>
+    <div class="flex flex-col gap-2">
+      <h4 class="text-wrap">{title}</h4>
+      {#if tools || additionalInfo}
+        <div class="flex flex-row flex-wrap gap-1">
+          {#each additionalInfo || [] as info}
+            <Chip label={info} color={ChipColor.WARNING} />
+          {/each}
+          {#each tools || [] as tool}
+            <Chip label={tool} color={ChipColor.INFO} />
+          {/each}
+        </div>
+      {/if}
+      <p class="opacity-70">{description}</p>
+    </div>
     {#if link}
       <ExternalLink href={link} label="View Project" />
     {/if}
